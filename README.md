@@ -14,7 +14,7 @@ scikit-learn 1.4.2
 ## Dataset
 Before training, you need to get the data on http://fcon_1000.projects.nitrc.org/indi/abide/ first. Please change the path in the code to your path.
 
-##Training
+## Training
 ```txt
 python main.py
 ```
