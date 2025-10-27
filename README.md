@@ -1,5 +1,5 @@
 # ASD_multimodal
-​​A Multimodal Data Fusion-Based Diagnostic Framework for ASD​
+Multimodal Data-Based Delection of Autism Spectrum Disorder
 
 ## Requirements
 
