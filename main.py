@@ -101,7 +101,6 @@ def train_and_eval(datadir, datname, hyperpm):
                     break
         print("time: %.4f sec." % (time.time() - tm))
 
-        # 加载验证集上表现最好的模型测试
         model_sav.seek(0)
         dict_list = torch.load(model_sav)
         agent.ModalFusion.load_state_dict(dict_list[0])
@@ -111,7 +110,6 @@ def train_and_eval(datadir, datname, hyperpm):
         cur_tst_acc, cur_tst_auc, _ = agent.print_tst_acc(hyperpm.mode)
         tst_acc.append(cur_tst_acc)
         tst_auc.append(cur_tst_auc)
-        # 如果运行到第 5 折时，测试集平均准确率还不到 60%（0.6），就提前终止整个交叉验证过程
         if np.array(tst_acc).mean() < 0.6 and clk == 5:
             break
 
@@ -122,7 +120,7 @@ def train_and_eval(datadir, datname, hyperpm):
 def main(args_str=None):
     assert float(torch.__version__[:3]) + 1e-3 >= 0.4
     parser = argparse.ArgumentParser()
-    parser.add_argument('--datadir', type=str, default='/home/lb/pycharm_work/shiyan/MMGL-main/ABIDE')
+    parser.add_argument('--datadir', type=str, default='ABIDE')
     parser.add_argument('--datname', type=str, default='data')
     parser.add_argument('--cpu', action='store_true', default=False,
                         help='Insist on using CPU instead of CUDA.')
@@ -186,3 +184,4 @@ if __name__ == '__main__':
     for _ in range(5):
         gc.collect()
         torch.cuda.empty_cache()
+
