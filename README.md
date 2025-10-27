@@ -2,11 +2,11 @@
 ​​A Multimodal Data Fusion-Based Diagnostic Framework for ASD​
 
 ## Requirement
-Python 3.9.0
-pytorch 2.7.0
-Cuda 12.6
-Numpy 1.23.5
-scikit-learn 1.4.2
+Python 3.9.0  
+pytorch 2.7.0  
+Cuda 12.6  
+Numpy 1.23.5  
+scikit-learn 1.4.2  
 
 
 ## Dataset
